@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+     <div class="box" id="time">
+      <h1> <%=today%> TODO List</h1>         
+     </div>
+    
+    <div class="box" id="container">
+        
+            <!-- <% for(let i=0;i<newitems.length;i++){ %>
+                <div class="item">
+                <input type="checkbox">
+                <p><%=newitems[i].name%></p>
+             </div>
+                      
+            <%}%> -->
+             <% newitems.forEach((i)=>{%>
+                <form action="/delete" method="post">
+                <div class="item">
+                    <button class="btn" style="font-size:24px" type="submit" name="checkbox"value="<%=i._id%>" ><i class="material-icons">delete</i></button>
+                    
+                  
+                    <p><%=i.name%></p>
+                 </div>
+                </form>
+             <%})%> 
+               
+                      
+            
+
+       <form class="item" action="/" method="post">
+        <input type="text" name="txt" placeholder="Add Items">
+        <button class="btn2" type="submit" value="submit">+</button>
+       </form>
+    </div>
+   
+       
+</body>
+</html>
